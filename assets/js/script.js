@@ -419,10 +419,8 @@ function renderDynamicCatalog() {
   
   if (selectedBrand) {
     if (titleEl) titleEl.textContent = `Блокировки дифференциала на ${selectedBrand}`;
-    // Фильтруем товары по марке
-    filteredProducts = productsData.filter(product => 
-      product.brand.includes(selectedBrand)
-    );
+    // ВРЕМЕННО: Показываем одни и те же товары для всех марок (чтобы не было пустых страниц)
+    filteredProducts = productsData;
   } else {
     // Скрываем каталог товаров, если нет марки, так как показываем сетку марок
     const catalogSection = document.getElementById('catalog-products-section');
@@ -431,11 +429,6 @@ function renderDynamicCatalog() {
   }
 
   catalogGrid.innerHTML = "";
-
-  if (filteredProducts.length === 0) {
-    catalogGrid.innerHTML = `<p style="grid-column: 1 / -1; font-size: 1.1rem;">К сожалению, товары для марки <b>${selectedBrand}</b> еще не добавлены в каталог.</p>`;
-    return;
-  }
 
   filteredProducts.forEach(product => {
     // Безопасная сериализация для передачи в onClick
