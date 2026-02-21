@@ -45,6 +45,11 @@ brands.forEach((brand) => {
   const fallbackSvg = "data:image/svg+xml," + encodeURIComponent(rawSvg);
 
   // Используем шаблонные строки и безопасный URL для fallback изображения
+  // Добавляем переход в каталог при клике на плитку марки
+  card.onclick = () => {
+    window.location.href = "catalog.html";
+  };
+
   card.innerHTML = `<img src="${basePath}${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
                         <div class="brand-name">${brand.name}</div>`;
   grid.appendChild(card);
