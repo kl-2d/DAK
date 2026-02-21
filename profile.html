@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет - ДАК</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo" style="text-decoration: none">ДАК</a>
+        <div class="nav-links">
+          <a href="index.html#block-1">Все авто</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="index.html#about-info">О нас</a>
+        </div>
+        <div class="nav-contact">
+          <a
+            href="profile.html"
+            class="login-icon-link"
+            id="login-btn"
+            title="Личный кабинет"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-user"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span
+              id="user-name"
+              class="user-name-display"
+              style="
+                display: none;
+                font-size: 14px;
+                margin-left: 8px;
+                color: #fff;
+              "
+            ></span>
+          </a>
+          <a href="cart.html" class="cart-icon-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-shopping-cart"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </a>
+          <span class="phone" style="color: #fff">8 800 555 2072</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-wrapper">
+      <main class="main-content" style="width: 100%; flex: 1">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a> »
+          <span>Личный кабинет</span>
+        </div>
+
+        <section class="card-section">
+          <div
+            class="section-header"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <h1 class="section-title">Личный кабинет</h1>
+              <div class="title-underline"></div>
+            </div>
+            <button
+              id="logout-profile-btn"
+              class="btn-secondary"
+              style="display: none"
+            >
+              Выйти из аккаунта
+            </button>
+          </div>
+
+          <div id="unauth-message" style="text-align: center; padding: 40px">
+            <h2>Вы не авторизованы</h2>
+            <p style="color: var(--text-muted); margin: 15px 0 25px">
+              Войдите в систему, чтобы увидеть свои заказы и данные.
+            </p>
+            <button
+              class="btn-primary"
+              onclick="
+                document.getElementById('login-modal').classList.add('active')
+              "
+            >
+              Войти
+            </button>
+          </div>
+
+          <div id="auth-dashboard" style="display: none">
+            <!-- Информация пользователя -->
+            <div
+              style="
+                background: var(--bg-body);
+                padding: 20px;
+                border-radius: var(--radius-md);
+                border: 1px solid var(--border);
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--accent);
+                  color: #fff;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 24px;
+                  font-weight: bold;
+                "
+                id="profile-avatar"
+              >
+                А
+              </div>
+              <div>
+                <h3
+                  id="profile-name"
+                  style="
+                    font-size: 20px;
+                    color: var(--text-heading);
+                    margin-bottom: 5px;
+                  "
+                >
+                  Имя Пользователя
+                </h3>
+                <div
+                  id="profile-email"
+                  style="color: var(--text-muted); font-size: 14px"
+                >
+                  Будущая база данных Firebase
+                </div>
+              </div>
+            </div>
+
+            <!-- История заказов -->
+            <h2
+              style="
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: var(--text-heading);
+              "
+            >
+              История заказов
+            </h2>
+
+            <div class="specs-table" id="orders-list">
+              <!-- Заказы будут здесь -->
+              <div
+                style="
+                  padding: 20px;
+                  text-align: center;
+                  color: var(--text-muted);
+                "
+              >
+                У вас пока нет заказов.
+                <a
+                  href="catalog.html"
+                  style="color: var(--primary); font-weight: 500"
+                  >Перейти в каталог</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Messenger Widget -->
+    <div id="messenger-container" class="messenger-container hidden">
+      <div class="messenger">Задать вопрос</div>
+      <div
+        class="whatsapp-icon social-icon"
+        onclick="window.open('https://wa.me/79123239659', '_blank')"
+      ></div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Скрипт специально для страницы профиля:
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = localStorage.getItem("dak_user");
+        if (user) {
+          document.getElementById("unauth-message").style.display = "none";
+          document.getElementById("auth-dashboard").style.display = "block";
+          document.getElementById("logout-profile-btn").style.display =
+            "inline-flex";
+
+          document.getElementById("profile-name").textContent = user;
+          document.getElementById("profile-avatar").textContent = user
+            .charAt(0)
+            .toUpperCase();
+
+          // Рендер фейковых заказов (наша имитация Firebase)
+          const ordersList = document.getElementById("orders-list");
+          const mockOrders =
+            JSON.parse(localStorage.getItem("dak_orders")) || [];
+
+          if (mockOrders.length > 0) {
+            ordersList.innerHTML = "";
+            // Показываем новые заказы сверху
+            mockOrders
+              .slice()
+              .reverse()
+              .forEach((order) => {
+                ordersList.innerHTML += `
+                <div class="spec-row" style="flex-direction: column;">
+                  <div class="spec-label" style="display: flex; justify-content: space-between; border-right: none; border-bottom: 1px solid var(--border); background: var(--bg-body)">
+                    <span>Заказ #${order.id} от ${order.date}</span>
+                    <span style="color: var(--accent);">${order.status}</span>
+                  </div>
+                  <div class="spec-value" style="font-size: 14px;">
+                    <div style="margin-bottom: 10px;"><strong>Сумма:</strong> ${order.total.toLocaleString("ru-RU")} руб.</div>
+                    <div style="color: var(--text-muted)"><strong>Товары:</strong><br>${order.items.map((i) => "- " + i.name + " (" + i.quantity + " шт)").join("<br>")}</div>
+                  </div>
+                </div>
+              `;
+              });
+          }
+
+          document.getElementById("logout-profile-btn").onclick = () => {
+            if (confirm("Точно выйти из аккаунта?")) {
+              localStorage.removeItem("dak_user");
+              window.location.reload();
+            }
+          };
+        } else {
+          document.getElementById("unauth-message").style.display = "block";
+          document.getElementById("auth-dashboard").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

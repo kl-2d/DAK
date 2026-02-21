@@ -18,10 +18,7 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav
-      class="navbar"
-      style="background-color: var(--primary); position: relative"
-    >
+    <nav class="navbar">
       <div class="nav-container">
         <div class="logo">ДАК</div>
         <div class="nav-links">
@@ -29,6 +26,40 @@
           <a href="index.html#about-info">О нас</a>
         </div>
         <div class="nav-contact">
+          <!-- Иконка личного кабинета / Входа -->
+          <a
+            href="#"
+            class="login-icon-link"
+            id="login-btn"
+            title="Личный кабинет"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-user"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span
+              id="user-name"
+              class="user-name-display"
+              style="
+                display: none;
+                font-size: 14px;
+                margin-left: 8px;
+                color: #fff;
+              "
+            ></span>
+          </a>
+
           <a href="cart.html" class="cart-icon-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
