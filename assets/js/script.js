@@ -360,9 +360,9 @@ document.addEventListener('DOMContentLoaded', updateLoginState);
 ======================================= */
 const productsData = [
   {
-    id: "dak-vaz-00-09",
-    brand: ["Lada", "Chevrolet"], // Подходит для Нивы и Шнивы
-    name: "Межосевой самоблокирующийся дифференциал ДАК",
+    id: "dak-vaz-mo-00-09",
+    brand: ["Нива, Шевроле Нива", "Lada"],
+    name: "Межосевой самоблокирующийся дифференциал ДАК для Нивы, Нивы Шевроле, Лады 4x4",
     code: "ДАК.ВАЗ.МО.00.09",
     install: "Раздаточная коробка",
     blockRatio: "90/100 %",
@@ -371,9 +371,9 @@ const productsData = [
     img: "https://dak4x4.com/files/catalog/6cdcc614d3154a050e9245d14fedc1e5_s.jpg",
   },
   {
-    id: "dks-204",
-    brand: ["Lada", "Chevrolet"],
-    name: "Блокировка ДКС для Нивы Шевроле, Нивы 4x4 (ДКС.204)",
+    id: "dks-204-front",
+    brand: ["Нива, Шевроле Нива", "Lada"],
+    name: "Блокировка ДКС для Нивы Шевроле, Нивы 4x4 в передний мост",
     code: "ДКС.204",
     install: "Передний мост",
     blockRatio: "100/100 %",
@@ -383,7 +383,7 @@ const productsData = [
   },
   {
     id: "dks-201-front",
-    brand: ["Lada"],
+    brand: ["Нива, Шевроле Нива", "Lada"],
     name: "Блокировка ДКС для Нивы в передний мост (до 2004 г.)",
     code: "ДКС.201",
     install: "Передний мост",
@@ -394,7 +394,7 @@ const productsData = [
   },
   {
     id: "dks-201-rear",
-    brand: ["Lada", "Chevrolet"],
+    brand: ["Нива, Шевроле Нива", "Lada", "Chevrolet (GM)"],
     name: "Блокировка ДКС для Нивы, Шевроле Нивы в задний мост",
     code: "ДКС.201",
     install: "Задний мост",
