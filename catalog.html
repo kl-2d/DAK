@@ -29,6 +29,27 @@
           <a href="index.html#about-info">О нас</a>
         </div>
         <div class="nav-contact">
+          <a href="cart.html" class="cart-icon-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-shopping-cart"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </a>
           <span class="phone" style="color: #fff">8 800 555 2072</span>
         </div>
       </div>
@@ -118,7 +139,20 @@
                 </div>
                 <div class="product-price">22 000 руб.</div>
                 <div class="product-actions">
-                  <button class="btn-primary">В корзину</button>
+                  <button
+                    class="btn-primary"
+                    onclick="
+                      addToCart({
+                        id: 'dak-vaz-00-09',
+                        name: 'Межосевой самоблокирующийся дифференциал ДАК',
+                        code: 'ДАК.ВАЗ.МО.00.09',
+                        price: 22000,
+                        img: 'https://dak4x4.com/files/catalog/6cdcc614d3154a050e9245d14fedc1e5_s.jpg',
+                      })
+                    "
+                  >
+                    В корзину
+                  </button>
                   <a
                     href="product.html"
                     class="btn-secondary"
@@ -170,7 +204,20 @@
                 </div>
                 <div class="product-price">20 000 руб.</div>
                 <div class="product-actions">
-                  <button class="btn-primary">В корзину</button>
+                  <button
+                    class="btn-primary"
+                    onclick="
+                      addToCart({
+                        id: 'dks-204',
+                        name: 'Блокировка ДКС.204 передний',
+                        code: 'ДКС.204',
+                        price: 20000,
+                        img: 'https://dak4x4.com/files/catalog/d394d38250146761c1c3c1285fc2c329_s.jpg',
+                      })
+                    "
+                  >
+                    В корзину
+                  </button>
                   <a
                     href="product.html"
                     class="btn-secondary"
@@ -221,7 +268,20 @@
                 </div>
                 <div class="product-price">20 000 руб.</div>
                 <div class="product-actions">
-                  <button class="btn-primary">В корзину</button>
+                  <button
+                    class="btn-primary"
+                    onclick="
+                      addToCart({
+                        id: 'dks-201-front',
+                        name: 'Блокировка ДКС.201 передний',
+                        code: 'ДКС.201',
+                        price: 20000,
+                        img: 'https://dak4x4.com/files/catalog/17c8459ea082db6ae4ac934ae21b91a9_s.jpg',
+                      })
+                    "
+                  >
+                    В корзину
+                  </button>
                   <a
                     href="product.html"
                     class="btn-secondary"
@@ -272,7 +332,20 @@
                 </div>
                 <div class="product-price">20 000 руб.</div>
                 <div class="product-actions">
-                  <button class="btn-primary">В корзину</button>
+                  <button
+                    class="btn-primary"
+                    onclick="
+                      addToCart({
+                        id: 'dks-201-rear',
+                        name: 'Блокировка ДКС.201 задний',
+                        code: 'ДКС.201',
+                        price: 20000,
+                        img: 'https://dak4x4.com/files/catalog/6a9f2dfb96c480ef80998cfc9ce3dced_s.jpg',
+                      })
+                    "
+                  >
+                    В корзину
+                  </button>
                   <a
                     href="product.html"
                     class="btn-secondary"

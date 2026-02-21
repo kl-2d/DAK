@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина - ДАК</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav
+      class="navbar"
+      style="background-color: var(--primary); position: relative"
+    >
+      <div class="nav-container">
+        <a href="index.html" class="logo" style="text-decoration: none">ДАК</a>
+        <div class="nav-links">
+          <a href="index.html#block-1">Все авто</a>
+          <a href="catalog.html">Каталог Нива</a>
+          <a href="index.html#about-info">О нас</a>
+        </div>
+        <div class="nav-contact">
+          <a href="cart.html" class="cart-icon-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-shopping-cart"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </a>
+          <span class="phone" style="color: #fff">8 800 555 2072</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-wrapper">
+      <main class="main-content" style="width: 100%; flex: 1">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a> »
+          <span>Корзина</span>
+        </div>
+
+        <section class="card-section">
+          <div class="section-header">
+            <h1 class="section-title">Оформление заказа</h1>
+            <div class="title-underline"></div>
+          </div>
+
+          <div class="cart-layout">
+            <!-- Список товаров (генерируется JS) -->
+            <div id="cart-items-container" class="cart-items-container">
+              <div class="cart-empty-message">Ваша корзина пуста.</div>
+            </div>
+
+            <!-- Сайдбар оформления -->
+            <aside class="checkout-sidebar">
+              <h3>Ваш заказ</h3>
+
+              <div class="checkout-total">
+                <span>Итого:</span>
+                <span id="cart-total-price">0 руб.</span>
+              </div>
+
+              <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                  <label for="fio">ФИО *</label>
+                  <input
+                    type="text"
+                    id="fio"
+                    required
+                    placeholder="Иванов Иван Иванович"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Контактный телефон *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    placeholder="+7 (999) 000-00-00"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="delivery">Способ доставки *</label>
+                  <select id="delivery" required>
+                    <option value="Транспортная компания">
+                      Транспортная компания
+                    </option>
+                    <option value="Почта">Почта</option>
+                    <option value="Самовывоз">Самовывоз</option>
+                  </select>
+                </div>
+                <div class="form-group" id="address-group">
+                  <label for="address">Адрес доставки</label>
+                  <input
+                    type="text"
+                    id="address"
+                    placeholder="Город, улица, дом..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="comment">Комментарий к заказу</label>
+                  <input
+                    type="text"
+                    id="comment"
+                    placeholder="Любые уточнения..."
+                  />
+                </div>
+
+                <button type="submit" class="btn-checkout">
+                  Отправить заказ
+                </button>
+                <div
+                  style="
+                    font-size: 11px;
+                    color: var(--text-muted);
+                    text-align: center;
+                    margin-top: 10px;
+                  "
+                >
+                  Нажимая кнопку, вы соглашаетесь с условиями оформления заказа.
+                </div>
+              </form>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Messenger Widget -->
+    <div id="messenger-container" class="messenger-container hidden">
+      <div class="messenger">Задать вопрос</div>
+      <div
+        class="whatsapp-icon social-icon"
+        onclick="window.open('https://wa.me/79123239659', '_blank')"
+      ></div>
+      <div
+        class="telegram-icon social-icon"
+        onclick="window.open('https://t.me/+79123239659', '_blank')"
+      ></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Скрипт переключения полей в форме (для Самовывоза скрываем Адрес)
+      const deliverySelect = document.getElementById("delivery");
+      const addressGroup = document.getElementById("address-group");
+
+      deliverySelect.addEventListener("change", (e) => {
+        if (e.target.value === "Самовывоз") {
+          addressGroup.style.display = "none";
+        } else {
+          addressGroup.style.display = "flex";
+          const label = addressGroup.querySelector("label");
+          label.textContent =
+            e.target.value === "Почта"
+              ? "Индекс и адрес доставки"
+              : "Город (пункт выдачи)";
+        }
+      });
+    </script>
+  </body>
+</html>
