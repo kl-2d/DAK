@@ -102,11 +102,27 @@
       </aside>
 
       <main class="main-content">
-        <section class="card-section">
+        <!-- БЛОК С МАРКАМИ (Показывается если марка не выбрана) -->
+        <section class="card-section" id="brands-section">
           <div class="section-header">
-            <h1 class="section-title" id="catalog-title">
-              Каталог всех блокировок
-            </h1>
+            <h1 class="section-title">Каталог всех марок</h1>
+            <div class="title-underline"></div>
+          </div>
+          <div class="prose" style="margin-bottom: 25px">
+            <p>
+              Выберите подходящую марку автомобиля, чтобы увидеть список
+              доступных блокировок дифференциала.
+            </p>
+          </div>
+          <div class="grid-container" id="brands-grid">
+            <!-- JS fills this -->
+          </div>
+        </section>
+
+        <!-- БЛОК С ТОВАРАМИ (Показывается если марка выбрана) -->
+        <section class="card-section" id="catalog-products-section">
+          <div class="section-header">
+            <h1 class="section-title" id="catalog-title">Каталог блокировок</h1>
             <div class="title-underline"></div>
           </div>
 

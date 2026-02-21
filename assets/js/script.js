@@ -32,26 +32,36 @@ const basePath =
   "Блокировка дифференциала. Дифференциалы Автоматические Красикова_files/";
 const grid = document.getElementById("brands-grid");
 
+// Проверка параметра URL
+const urlParamsForGrid = new URLSearchParams(window.location.search);
+const isBrandSelected = urlParamsForGrid.get("brand");
+
 if (grid) {
-  brands.forEach((brand) => {
-    // Генерация карточек для центральной сетки
-    const card = document.createElement("div");
-    card.className = "brand-card";
+  if (!isBrandSelected) {
+    brands.forEach((brand) => {
+      // Генерация карточек для центральной сетки
+      const card = document.createElement("div");
+      card.className = "brand-card";
 
-    // Используем encodeURIComponent для безопасного внедрения SVG
-    const rawSvg =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#f0f4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">Нет фото</text></svg>';
-    const fallbackSvg = "data:image/svg+xml," + encodeURIComponent(rawSvg);
+      // Используем encodeURIComponent для безопасного внедрения SVG
+      const rawSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#f0f4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">Нет фото</text></svg>';
+      const fallbackSvg = "data:image/svg+xml," + encodeURIComponent(rawSvg);
 
-    // Добавляем переход в каталог с параметром марки
-    card.onclick = () => {
-      window.location.href = `catalog.html?brand=${encodeURIComponent(brand.name)}`;
-    };
+      // Добавляем переход в каталог с параметром марки
+      card.onclick = () => {
+        window.location.href = `catalog.html?brand=${encodeURIComponent(brand.name)}`;
+      };
 
-    card.innerHTML = `<img src="${basePath}${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
-                          <div class="brand-name">${brand.name}</div>`;
-    grid.appendChild(card);
-  });
+      card.innerHTML = `<img src="${basePath}${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+                            <div class="brand-name">${brand.name}</div>`;
+      grid.appendChild(card);
+    });
+  } else {
+    // Если бренд выбран, можно просто скрыть сетку брендов (её секцию)
+    const brandSection = document.getElementById('brands-section');
+    if (brandSection) brandSection.style.display = 'none';
+  }
 }
 
 // Показывать виджет мессенджера на мобильных устройствах
@@ -406,8 +416,10 @@ function renderDynamicCatalog() {
       product.brand.includes(selectedBrand)
     );
   } else {
-    // В каталоге без марки можно показать всё или написать сообщение
-    if (titleEl) titleEl.textContent = "Каталог всех блокировок";
+    // Скрываем каталог товаров, если нет марки, так как показываем сетку марок
+    const catalogSection = document.getElementById('catalog-products-section');
+    if (catalogSection) catalogSection.style.display = 'none';
+    return;
   }
 
   catalogGrid.innerHTML = "";
