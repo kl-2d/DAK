@@ -1,31 +1,39 @@
 const brands = [
-  { name: "Chevrolet", img: "chevrolet.jpg" },
-  { name: "Dadi", img: "dadi_.jpg" },
-  { name: "Daihatsu", img: "daihatsu.jpg" },
-  { name: "Dodge", img: "dodge.jpg" },
-  { name: "Ford", img: "ford.jpg" },
-  { name: "Great Wall", img: "greatwall.jpg" },
-  { name: "Honda", img: "honda.jpg" },
-  { name: "Hyundai", img: "hyundai.jpg" },
-  { name: "Isuzu", img: "isuzu.jpg" },
-  { name: "Izh", img: "izh.jpg" },
-  { name: "Jeep", img: "jeep.jpg" },
-  { name: "Kamaz", img: "kamaz.jpg" },
-  { name: "Kia", img: "kia.jpg" },
-  { name: "Lada", img: "lada2.jpg" },
-  { name: "Land Rover", img: "land_rover.jpg" },
-  { name: "Mazda", img: "mazda.jpg" },
-  { name: "Mitsubishi", img: "mitsubishi.jpg" },
-  { name: "Nissan", img: "nissan.jpg" },
-  { name: "Opel", img: "opel.jpg" },
-  { name: "Ssang Yong", img: "ssang_yong.jpg" },
-  { name: "Subaru", img: "subaru.jpg" },
-  { name: "Suzuki", img: "suzuki.jpg" },
-  { name: "Tagaz", img: "tagaz.jpg" },
-  { name: "Toyota", img: "toyota.jpg" },
-  { name: "Trekol", img: "trekol.jpg" },
-  { name: "UAZ", img: "uaz.jpg" },
-  { name: "Ural", img: "ural.jpg" },
+  { name: "УАЗ", img: "https://dak4x4.com/files/catalog/cf8bb14525966ae121e3af36736938a1_s.jpg" },
+  { name: "Вездеходы ТРЭКОЛ, Хищник", img: "https://dak4x4.com/files/catalog/ed94ac71761baa4f9271f9f0f2ef849a_s.jpg" },
+  { name: "Вездеход BV 206", img: "https://dak4x4.com/files/catalog/14be8e727646f06f7386ca996fef62761_s.jpg" },
+  { name: "ГАЗель, Соболь", img: "https://dak4x4.com/files/catalog/1ac32e7d2538411e23443d3926e4bd60_s.jpg" },
+  { name: "ВОЛГА", img: "https://dak4x4.com/files/catalog/55803633440546eda896fe67cdc3e3e8_s.jpg" },
+  { name: "ВАЗ передний привод", img: "https://dak4x4.com/files/catalog/5717741dccd216392ef870e47a4e0afc_s.jpg" },
+  { name: "Нива, Шевроле Нива", img: "https://dak4x4.com/files/catalog/886e9ea098cab9572116333ff0330df2_s.jpg" },
+  { name: "ВАЗ классика", img: "https://dak4x4.com/files/catalog/ed75c56629e3ef66b182f01ed7211a72_s.jpg" },
+  { name: "ИЖ ОДА, Москвич", img: "https://dak4x4.com/files/catalog/537305f2dd2efc8b1dd88673e2cbc535_s.jpg" },
+  { name: "Квадроциклы", img: "https://dak4x4.com/files/catalog/7172e059e935213839d87c65f1a4e11b_s.jpg" },
+  { name: "Audi", img: "https://dak4x4.com/files/catalog/e267809f310f74bc31a2fc182995ba62_s.jpg" },
+  { name: "Daihatsu", img: "https://dak4x4.com/files/catalog/23e6f4337d0c5b972c4f75f0bd51853e_s.jpg" },
+  { name: "Dadi", img: "https://dak4x4.com/files/catalog/5e2de7b7ea5788ccefea819b9f970d7b_s.jpg" },
+  { name: "Dodge", img: "https://dak4x4.com/files/catalog/8fc3d2846fba215ec464ace846906d96_s.jpg" },
+  { name: "Ford", img: "https://dak4x4.com/files/catalog/89d74d2be9635f48586ce968ae145e30_s.jpg" },
+  { name: "Great Wall", img: "https://dak4x4.com/files/catalog/7b26ddc8cfd605cf2be153beb0bc3d39_s.jpg" },
+  { name: "Chevrolet (GM)", img: "https://dak4x4.com/files/catalog/8f6f649d9be87dc690b3499aaf9fb00c_s.jpg" },
+  { name: "Honda", img: "https://dak4x4.com/files/catalog/b4b103de9fe5989799f41023bbcba95e_s.jpg" },
+  { name: "Hyundai", img: "https://dak4x4.com/files/catalog/ff0addec0805e8236420409777824366_s.jpg" },
+  { name: "Isuzu", img: "https://dak4x4.com/files/catalog/94d6bbd410a9ee135f8034ac8c4de5a2_s.jpg" },
+  { name: "Jeep", img: "https://dak4x4.com/files/catalog/08c0ab651bca366a6e72a42329b356ee_s.jpg" },
+  { name: "KIA", img: "https://dak4x4.com/files/catalog/0fbf6a17dfccf22a2fd1af92f8c15532_s.jpg" },
+  { name: "Land Rover", img: "https://dak4x4.com/files/catalog/2f415ea700f3d4fbaa3849fd3fdec241_s.jpg" },
+  { name: "Mitsubishi", img: "https://dak4x4.com/files/catalog/7439a9d019da835debfc0d8cf97a6ca4_s.jpg" },
+  { name: "Mazda", img: "https://dak4x4.com/files/catalog/c43771477a6c35ec24574771c859dde2_s.jpg" },
+  { name: "Nissan", img: "https://dak4x4.com/files/catalog/6cac7a8497ded527b1a6c733567ae1b0_s.jpg" },
+  { name: "Opel", img: "https://dak4x4.com/files/catalog/b238273db553b88c69ec70d061b1d010_s.jpg" },
+  { name: "Renault", img: "https://dak4x4.com/files/catalog/fa801fb40910e21d6a5a1a98ba4579da_s.jpg" },
+  { name: "ТагАЗ", img: "https://dak4x4.com/files/catalog/b5ac3f1b6595e32fd5b2417505bead5a_s.jpg" },
+  { name: "Ssang Yong", img: "https://dak4x4.com/files/catalog/d64329cf05df3022370e26864b6251c6_s.jpg" },
+  { name: "Suzuki", img: "https://dak4x4.com/files/catalog/4b4d5c04a829bf3d9fce0a1b43db38c1_s.jpg" },
+  { name: "Subaru", img: "https://dak4x4.com/files/catalog/4231b0b8264ccb752b03ed19720bae5c_s.jpg" },
+  { name: "Toyota", img: "https://dak4x4.com/files/catalog/bced3d56fccff37b93cc7b738cf51a16_s.jpg" },
+  { name: "КАМАЗ", img: "https://dak4x4.com/files/catalog/6c746a06fcdfc6a0cffd419c53f93f14_s.jpg" },
+  { name: "Урал", img: "https://dak4x4.com/files/catalog/73943bf308d553a15045c3bd3075e1a6_s.jpg" }
 ];
 
 const basePath =
@@ -53,7 +61,7 @@ if (grid) {
         window.location.href = `catalog.html?brand=${encodeURIComponent(brand.name)}`;
       };
 
-      card.innerHTML = `<img src="${basePath}${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+      card.innerHTML = `<img src="${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
                             <div class="brand-name">${brand.name}</div>`;
       grid.appendChild(card);
     });
