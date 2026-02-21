@@ -31,63 +31,65 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- TOP BAR --- */
-.top-bar {
-  background-color: var(--primary);
-  color: #f1f5f9;
-  font-size: 13px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+/* --- NAVBAR --- */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  background: transparent;
 }
 
-.top-bar-container {
+.nav-container {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
-.work-time {
-  color: #94a3b8;
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
-.top-contacts {
+.nav-links {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 30px;
 }
 
-.phone-accent {
-  font-size: 16px;
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-contact .phone {
+  font-size: 18px;
   font-weight: 700;
   color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.phone-accent span {
-  font-size: 12px;
-  font-weight: 400;
-  color: #94a3b8;
-}
-
-.phone-secondary {
-  font-weight: 500;
-  color: #f8fafc;
 }
 
 /* --- HERO SECTION --- */
 .hero {
-  background: radial-gradient(circle at top right, var(--primary-light), var(--primary));
-  padding: 60px 20px;
+  background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  padding: 140px 20px 80px;
+  border-bottom: 4px solid var(--accent);
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .hero::before {
@@ -155,42 +157,31 @@ body {
   letter-spacing: 0.5px;
 }
 
-.product-list {
+.nav-sidebar {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-.product-list li {
-  padding: 10px 14px;
+.nav-sidebar li a {
+  display: block;
+  padding: 12px 16px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   color: var(--text-main);
+  text-decoration: none;
   transition: all 0.2s ease;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
-
-.product-list li:hover {
   background: var(--bg-body);
+  border: 1px solid transparent;
+}
+
+.nav-sidebar li a:hover {
+  background: #f1f5f9;
   color: var(--primary);
+  border-color: var(--border);
   transform: translateX(4px);
-}
-
-.product-list li::before {
-  content: '→';
-  margin-right: 10px;
-  color: var(--text-muted);
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
-.product-list li:hover::before {
-  color: var(--accent);
 }
 
 /* --- MAIN CONTENT --- */
@@ -454,19 +445,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  .top-bar-container {
-    flex-direction: column;
-    text-align: center;
+  .nav-links {
+    display: none; /* Hide on mobile for simplicity, could add a hamburger menu */
   }
-  .top-contacts {
-    flex-direction: column;
-    gap: 8px;
+  .nav-contact .phone {
+    font-size: 16px;
   }
   .hero {
-    padding: 40px 20px;
+    padding: 100px 20px 40px;
   }
   .hero h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .card-section {
     padding: 25px 20px;

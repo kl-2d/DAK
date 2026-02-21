@@ -34,10 +34,6 @@ const sidebarList = document.getElementById("sidebar-list");
 const grid = document.getElementById("brands-grid");
 
 brands.forEach((brand) => {
-  // Вывод каждого названия с новой строки в боковое меню
-  const li = document.createElement("li");
-  li.textContent = brand.name;
-  sidebarList.appendChild(li);
 
   // Генерация карточек для центральной сетки
   const card = document.createElement("div");
