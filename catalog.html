@@ -60,11 +60,11 @@
         <div class="sidebar-sticky">
           <h2>Каталог ДАК</h2>
           <ul class="nav-sidebar">
-            <li><a href="#">Нива (Все модели)</a></li>
-            <li><a href="#">УАЗ</a></li>
-            <li><a href="#">ГАЗ / Газель</a></li>
-            <li><a href="#">Toyota</a></li>
-            <li><a href="#">Nissan</a></li>
+            <li><a href="catalog.html?brand=Lada">Нива / Lada</a></li>
+            <li><a href="catalog.html?brand=UAZ">УАЗ</a></li>
+            <li><a href="catalog.html?brand=GAZ">ГАЗ / Газель</a></li>
+            <li><a href="catalog.html?brand=Toyota">Toyota</a></li>
+            <li><a href="catalog.html?brand=Nissan">Nissan</a></li>
             <li><a href="index.html">← Вернуться к маркам</a></li>
           </ul>
         </div>
@@ -73,292 +73,22 @@
       <main class="main-content">
         <section class="card-section">
           <div class="section-header">
-            <h1 class="section-title">
-              Блокировки дифференциала на Ниву, Ниву Шевроле
+            <h1 class="section-title" id="catalog-title">
+              Каталог всех блокировок
             </h1>
             <div class="title-underline"></div>
           </div>
 
           <div class="prose" style="margin-bottom: 30px">
             <p>
-              Для автомобилей <strong>Нива, Шеви Нива</strong> есть два
-              предложения: самоблокирующийся дифференциал ДАК и блокировка
-              дифференциала ДКС.
-            </p>
-            <p>
-              Если автомобиль предназначен для эксплуатации на бездорожье,
-              следует выбирать <strong>ДАК</strong>. Если автомобиль
-              используется в городских условиях с выездами на бездорожье, лучше
-              применить <strong>ДКС</strong>.
-            </p>
-            <p>
-              Диапазон условий, в которых дифференциал находится в режиме
-              «разблокирован» у ДКС намного шире, чем у ДАК. Это является
-              преимуществом при эксплуатации на асфальте. Но в условиях
-              бездорожья важна скорость реакции дифференциала на изменения
-              дорожных условий. В этом случае преимущество имеет ДАК.
+              Выберите подходящую блокировку дифференциала для вашего
+              автомобиля. Здесь представлены актуальные модели ДАК и ДКС с
+              характеристиками и ценами.
             </p>
           </div>
 
-          <div class="product-catalog">
-            <!-- Товар 1 -->
-            <div class="product-item">
-              <div class="product-image">
-                <!-- Заглушка, если нет реальной картинки в каталоге -->
-                <img
-                  src="https://dak4x4.com/files/catalog/6cdcc614d3154a050e9245d14fedc1e5_s.jpg"
-                  alt="Межосевой дифференциал ДАК"
-                  onerror="
-                    this.src =
-                      'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f4f8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' fill=\'%23a0aec0\'>Фото</text></svg>'
-                  "
-                />
-              </div>
-              <div class="product-info">
-                <h3 class="product-title">
-                  Межосевой самоблокирующийся дифференциал ДАК для Нивы, Нивы
-                  Шевроле, Лады 4x4
-                </h3>
-                <div class="product-specs-grid">
-                  <div class="spec-item">
-                    <span class="label">Код изделия</span>
-                    <span class="value">ДАК.ВАЗ.МО.00.09</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Место установки</span>
-                    <span class="value">Раздаточная коробка</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Блокировка (вперёд/назад)</span>
-                    <span class="value">90/100 %</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Количество шлицов полуоси</span>
-                    <span class="value">22</span>
-                  </div>
-                </div>
-                <div class="product-price">22 000 руб.</div>
-                <div class="product-actions">
-                  <button
-                    class="btn-primary"
-                    onclick="
-                      addToCart({
-                        id: 'dak-vaz-00-09',
-                        name: 'Межосевой самоблокирующийся дифференциал ДАК',
-                        code: 'ДАК.ВАЗ.МО.00.09',
-                        price: 22000,
-                        img: 'https://dak4x4.com/files/catalog/6cdcc614d3154a050e9245d14fedc1e5_s.jpg',
-                      })
-                    "
-                  >
-                    В корзину
-                  </button>
-                  <a
-                    href="product.html"
-                    class="btn-secondary"
-                    style="
-                      text-decoration: none;
-                      display: inline-flex;
-                      align-items: center;
-                    "
-                    >Подробнее</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Товар 2 -->
-            <div class="product-item">
-              <div class="product-image">
-                <img
-                  src="https://dak4x4.com/files/catalog/d394d38250146761c1c3c1285fc2c329_s.jpg"
-                  alt="Блокировка ДКС.204"
-                  onerror="
-                    this.src =
-                      'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f4f8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' fill=\'%23a0aec0\'>Фото</text></svg>'
-                  "
-                />
-              </div>
-              <div class="product-info">
-                <h3 class="product-title">
-                  Блокировка ДКС для Нивы Шевроле, Нивы 4x4 в передний мост
-                  (ДКС.204)
-                </h3>
-                <div class="product-specs-grid">
-                  <div class="spec-item">
-                    <span class="label">Код изделия</span>
-                    <span class="value">ДКС.204</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Место установки</span>
-                    <span class="value">Передний мост</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Блокировка (вперёд/назад)</span>
-                    <span class="value">100/100 %</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Количество шлицов полуоси</span>
-                    <span class="value">24</span>
-                  </div>
-                </div>
-                <div class="product-price">20 000 руб.</div>
-                <div class="product-actions">
-                  <button
-                    class="btn-primary"
-                    onclick="
-                      addToCart({
-                        id: 'dks-204',
-                        name: 'Блокировка ДКС.204 передний',
-                        code: 'ДКС.204',
-                        price: 20000,
-                        img: 'https://dak4x4.com/files/catalog/d394d38250146761c1c3c1285fc2c329_s.jpg',
-                      })
-                    "
-                  >
-                    В корзину
-                  </button>
-                  <a
-                    href="product.html"
-                    class="btn-secondary"
-                    style="
-                      text-decoration: none;
-                      display: inline-flex;
-                      align-items: center;
-                    "
-                    >Подробнее</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Товар 3 -->
-            <div class="product-item">
-              <div class="product-image">
-                <img
-                  src="https://dak4x4.com/files/catalog/17c8459ea082db6ae4ac934ae21b91a9_s.jpg"
-                  alt="Блокировка ДКС.201 передний"
-                  onerror="
-                    this.src =
-                      'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f4f8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' fill=\'%23a0aec0\'>Фото</text></svg>'
-                  "
-                />
-              </div>
-              <div class="product-info">
-                <h3 class="product-title">
-                  Блокировка ДКС для Нивы в передний мост (до 2004 г.)
-                </h3>
-                <div class="product-specs-grid">
-                  <div class="spec-item">
-                    <span class="label">Код изделия</span>
-                    <span class="value">ДКС.201</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Место установки</span>
-                    <span class="value">Передний мост</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Блокировка (вперёд/назад)</span>
-                    <span class="value">100/100 %</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Количество шлицов полуоси</span>
-                    <span class="value">22</span>
-                  </div>
-                </div>
-                <div class="product-price">20 000 руб.</div>
-                <div class="product-actions">
-                  <button
-                    class="btn-primary"
-                    onclick="
-                      addToCart({
-                        id: 'dks-201-front',
-                        name: 'Блокировка ДКС.201 передний',
-                        code: 'ДКС.201',
-                        price: 20000,
-                        img: 'https://dak4x4.com/files/catalog/17c8459ea082db6ae4ac934ae21b91a9_s.jpg',
-                      })
-                    "
-                  >
-                    В корзину
-                  </button>
-                  <a
-                    href="product.html"
-                    class="btn-secondary"
-                    style="
-                      text-decoration: none;
-                      display: inline-flex;
-                      align-items: center;
-                    "
-                    >Подробнее</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Товар 4 -->
-            <div class="product-item">
-              <div class="product-image">
-                <img
-                  src="https://dak4x4.com/files/catalog/6a9f2dfb96c480ef80998cfc9ce3dced_s.jpg"
-                  alt="Блокировка ДКС.201 задний"
-                  onerror="
-                    this.src =
-                      'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f4f8\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' fill=\'%23a0aec0\'>Фото</text></svg>'
-                  "
-                />
-              </div>
-              <div class="product-info">
-                <h3 class="product-title">
-                  Блокировка ДКС для Нивы, Шевроле Нивы в задний мост
-                </h3>
-                <div class="product-specs-grid">
-                  <div class="spec-item">
-                    <span class="label">Код изделия</span>
-                    <span class="value">ДКС.201</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Место установки</span>
-                    <span class="value">Задний мост</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Блокировка (вперёд/назад)</span>
-                    <span class="value">100/100 %</span>
-                  </div>
-                  <div class="spec-item">
-                    <span class="label">Количество шлицов полуоси</span>
-                    <span class="value">22</span>
-                  </div>
-                </div>
-                <div class="product-price">20 000 руб.</div>
-                <div class="product-actions">
-                  <button
-                    class="btn-primary"
-                    onclick="
-                      addToCart({
-                        id: 'dks-201-rear',
-                        name: 'Блокировка ДКС.201 задний',
-                        code: 'ДКС.201',
-                        price: 20000,
-                        img: 'https://dak4x4.com/files/catalog/6a9f2dfb96c480ef80998cfc9ce3dced_s.jpg',
-                      })
-                    "
-                  >
-                    В корзину
-                  </button>
-                  <a
-                    href="product.html"
-                    class="btn-secondary"
-                    style="
-                      text-decoration: none;
-                      display: inline-flex;
-                      align-items: center;
-                    "
-                    >Подробнее</a
-                  >
-                </div>
-              </div>
-            </div>
+          <div class="product-catalog" id="catalog-grid">
+            <!-- Сюда с помощью JavaScript будут подставляться товары -->
           </div>
         </section>
       </main>

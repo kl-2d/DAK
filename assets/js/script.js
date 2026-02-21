@@ -43,9 +43,9 @@ if (grid) {
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#f0f4f8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">Нет фото</text></svg>';
     const fallbackSvg = "data:image/svg+xml," + encodeURIComponent(rawSvg);
 
-    // Добавляем переход в каталог при клике на плитку марки
+    // Добавляем переход в каталог с параметром марки
     card.onclick = () => {
-      window.location.href = "catalog.html";
+      window.location.href = `catalog.html?brand=${encodeURIComponent(brand.name)}`;
     };
 
     card.innerHTML = `<img src="${basePath}${brand.img}" alt="${brand.name}" class="brand-logo" onerror="this.onerror=null; this.src='${fallbackSvg}';">
@@ -237,3 +237,124 @@ if (checkoutForm) {
     window.open(`https://wa.me/79123239659?text=${encodedText}`, "_blank");
   });
 }
+
+/* =======================================
+   ДИНАМИЧЕСКИЙ КАТАЛОГ ТОВАРОВ
+======================================= */
+const productsData = [
+  {
+    id: "dak-vaz-00-09",
+    brand: ["Lada", "Chevrolet"], // Подходит для Нивы и Шнивы
+    name: "Межосевой самоблокирующийся дифференциал ДАК",
+    code: "ДАК.ВАЗ.МО.00.09",
+    install: "Раздаточная коробка",
+    blockRatio: "90/100 %",
+    splines: "22",
+    price: 22000,
+    img: "https://dak4x4.com/files/catalog/6cdcc614d3154a050e9245d14fedc1e5_s.jpg",
+  },
+  {
+    id: "dks-204",
+    brand: ["Lada", "Chevrolet"],
+    name: "Блокировка ДКС для Нивы Шевроле, Нивы 4x4 (ДКС.204)",
+    code: "ДКС.204",
+    install: "Передний мост",
+    blockRatio: "100/100 %",
+    splines: "24",
+    price: 20000,
+    img: "https://dak4x4.com/files/catalog/d394d38250146761c1c3c1285fc2c329_s.jpg",
+  },
+  {
+    id: "dks-201-front",
+    brand: ["Lada"],
+    name: "Блокировка ДКС для Нивы в передний мост (до 2004 г.)",
+    code: "ДКС.201",
+    install: "Передний мост",
+    blockRatio: "100/100 %",
+    splines: "22",
+    price: 20000,
+    img: "https://dak4x4.com/files/catalog/17c8459ea082db6ae4ac934ae21b91a9_s.jpg",
+  },
+  {
+    id: "dks-201-rear",
+    brand: ["Lada", "Chevrolet"],
+    name: "Блокировка ДКС для Нивы, Шевроле Нивы в задний мост",
+    code: "ДКС.201",
+    install: "Задний мост",
+    blockRatio: "100/100 %",
+    splines: "22",
+    price: 20000,
+    img: "https://dak4x4.com/files/catalog/6a9f2dfb96c480ef80998cfc9ce3dced_s.jpg",
+  }
+];
+
+function renderDynamicCatalog() {
+  const params = new URLSearchParams(window.location.search);
+  const selectedBrand = params.get("brand");
+  
+  const titleEl = document.getElementById("catalog-title");
+  const catalogGrid = document.getElementById("catalog-grid");
+  
+  // Если мы не на странице каталога, выходим
+  if (!catalogGrid) return;
+  
+  let filteredProducts = productsData;
+  
+  if (selectedBrand) {
+    if (titleEl) titleEl.textContent = `Блокировки дифференциала на ${selectedBrand}`;
+    // Фильтруем товары по марке
+    filteredProducts = productsData.filter(product => 
+      product.brand.includes(selectedBrand)
+    );
+  } else {
+    // В каталоге без марки можно показать всё или написать сообщение
+    if (titleEl) titleEl.textContent = "Каталог всех блокировок";
+  }
+
+  catalogGrid.innerHTML = "";
+
+  if (filteredProducts.length === 0) {
+    catalogGrid.innerHTML = `<p style="grid-column: 1 / -1; font-size: 1.1rem;">К сожалению, товары для марки <b>${selectedBrand}</b> еще не добавлены в каталог.</p>`;
+    return;
+  }
+
+  filteredProducts.forEach(product => {
+    // Безопасная сериализация для передачи в onClick
+    const safeProductObj = JSON.stringify({
+      id: product.id,
+      name: product.name,
+      code: product.code,
+      price: product.price,
+      img: product.img
+    }).replace(/"/g, '&quot;');
+
+    const itemEl = document.createElement("div");
+    itemEl.className = "product-item";
+    itemEl.innerHTML = `
+      <div class="product-image">
+        <img
+          src="${product.img}"
+          alt="${product.name}"
+          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'100\\' height=\\'100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%23f0f4f8\\'/><text x=\\'50%\\' y=\\'50%\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' font-size=\\'14\\' fill=\\'%23a0aec0\\'>Фото</text></svg>'"
+        />
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">${product.name}</h3>
+        <div class="product-specs-grid">
+          <div class="spec-item"><span class="label">Код изделия</span><span class="value">${product.code}</span></div>
+          <div class="spec-item"><span class="label">Место установки</span><span class="value">${product.install}</span></div>
+          <div class="spec-item"><span class="label">Блокировка</span><span class="value">${product.blockRatio}</span></div>
+          <div class="spec-item"><span class="label">Шлицы</span><span class="value">${product.splines}</span></div>
+        </div>
+        <div class="product-price">${product.price.toLocaleString("ru-RU")} руб.</div>
+        <div class="product-actions">
+          <button class="btn-primary" onclick="addToCart(${safeProductObj})">В корзину</button>
+          <a href="product.html?id=${product.id}" class="btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center;">Подробнее</a>
+        </div>
+      </div>
+    `;
+    catalogGrid.appendChild(itemEl);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderDynamicCatalog);
